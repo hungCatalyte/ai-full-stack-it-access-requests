@@ -1,0 +1,146 @@
+test_t02_input_identity_hash_and_boundary (test_contracts.InputContracts.test_t02_input_identity_hash_and_boundary) ... ok
+test_t03_schema_and_exact_quote_validation (test_contracts.InputContracts.test_t03_schema_and_exact_quote_validation) ... ok
+test_t04_extraction_facts (test_extraction.ExtractionCases.test_t04_extraction_facts) ... ok
+test_t05_malformed_output (test_extraction.ExtractionCases.test_t05_malformed_output) ... ok
+test_t06_refusal (test_extraction.ExtractionCases.test_t06_refusal) ... ok
+test_t07_interrupted_response (test_extraction.ExtractionCases.test_t07_interrupted_response) ... ok
+test_t08_provider_failure (test_extraction.ExtractionCases.test_t08_provider_failure) ... ok
+test_t09_provider_request_and_redaction (test_extraction.ExtractionCases.test_t09_provider_request_and_redaction) ... ok
+test_t01_mock_provider_contract (test_mock_provider.MockProviderContract.test_t01_mock_provider_contract)
+Saved replies, failures, retries, and gates work without a key or network. ... ok
+test_t10_complete_request (test_policy.PolicyCases.test_t10_complete_request) ... ERROR
+test_t11_missing_dates (test_policy.PolicyCases.test_t11_missing_dates) ... ERROR
+test_t12_conflicting_details (test_policy.PolicyCases.test_t12_conflicting_details) ... ERROR
+test_t13_embedded_instructions (test_policy.PolicyCases.test_t13_embedded_instructions) ... ERROR
+test_t14_withdrawal (test_policy.PolicyCases.test_t14_withdrawal) ... ERROR
+test_t15_security_review (test_policy.PolicyCases.test_t15_security_review) ... ERROR
+test_t16_corrections (test_policy.PolicyCases.test_t16_corrections) ... ERROR
+test_t17_relative_dates (test_policy.PolicyCases.test_t17_relative_dates) ... ERROR
+test_t18_identifier_mismatch (test_policy.PolicyCases.test_t18_identifier_mismatch) ... ERROR
+test_t19_changed_permission (test_policy.PolicyCases.test_t19_changed_permission) ... ERROR
+test_t20_completeness_precedence (test_policy.PolicyCases.test_t20_completeness_precedence) ... ERROR
+test_a_mock_reply_is_read_with_no_key_and_no_network (test_starter.MockResponse.test_a_mock_reply_is_read_with_no_key_and_no_network) ... ok
+test_each_request_export_has_message_text_and_a_hash (test_starter.SuppliedFiles.test_each_request_export_has_message_text_and_a_hash) ... ok
+test_the_schema_names_the_fields_it_requires (test_starter.SuppliedFiles.test_the_schema_names_the_fields_it_requires) ... ok
+
+======================================================================
+ERROR: test_t10_complete_request (test_policy.PolicyCases.test_t10_complete_request)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 14, in test_t10_complete_request
+    def test_t10_complete_request(self):self.check_profile('IT-001.json')
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 7, in check_profile
+    from access_requests.policy import route
+ModuleNotFoundError: No module named 'access_requests.policy'
+
+======================================================================
+ERROR: test_t11_missing_dates (test_policy.PolicyCases.test_t11_missing_dates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 16, in test_t11_missing_dates
+    value,_=self.check_profile('IT-010.json')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 7, in check_profile
+    from access_requests.policy import route
+ModuleNotFoundError: No module named 'access_requests.policy'
+
+======================================================================
+ERROR: test_t12_conflicting_details (test_policy.PolicyCases.test_t12_conflicting_details)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 20, in test_t12_conflicting_details
+    value,_=self.check_profile(name); self.assertIsNone(value[key]); self.assertTrue(value['issues'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 7, in check_profile
+    from access_requests.policy import route
+ModuleNotFoundError: No module named 'access_requests.policy'
+
+======================================================================
+ERROR: test_t13_embedded_instructions (test_policy.PolicyCases.test_t13_embedded_instructions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 22, in test_t13_embedded_instructions
+    value,_=self.check_profile('IT-006.json')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 7, in check_profile
+    from access_requests.policy import route
+ModuleNotFoundError: No module named 'access_requests.policy'
+
+======================================================================
+ERROR: test_t14_withdrawal (test_policy.PolicyCases.test_t14_withdrawal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 26, in test_t14_withdrawal
+    self.check_profile('IT-005.json')
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 7, in check_profile
+    from access_requests.policy import route
+ModuleNotFoundError: No module named 'access_requests.policy'
+
+======================================================================
+ERROR: test_t15_security_review (test_policy.PolicyCases.test_t15_security_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 33, in test_t15_security_review
+    for name in ('IT-002.json','IT-007.json','IT-012.json','IT-013.json','IT-019.json'):self.check_profile(name)
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 7, in check_profile
+    from access_requests.policy import route
+ModuleNotFoundError: No module named 'access_requests.policy'
+
+======================================================================
+ERROR: test_t16_corrections (test_policy.PolicyCases.test_t16_corrections)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 35, in test_t16_corrections
+    self.assertEqual(self.check_profile('IT-008.json')[0]['environment'],'staging')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 7, in check_profile
+    from access_requests.policy import route
+ModuleNotFoundError: No module named 'access_requests.policy'
+
+======================================================================
+ERROR: test_t17_relative_dates (test_policy.PolicyCases.test_t17_relative_dates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 38, in test_t17_relative_dates
+    value,_=self.check_profile('IT-011.json'); self.assertIsNone(value['start_date']); self.assertIsNone(value['end_date'])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 7, in check_profile
+    from access_requests.policy import route
+ModuleNotFoundError: No module named 'access_requests.policy'
+
+======================================================================
+ERROR: test_t18_identifier_mismatch (test_policy.PolicyCases.test_t18_identifier_mismatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 40, in test_t18_identifier_mismatch
+    value,_=self.check_profile('IT-016.json'); self.assertEqual(value['request_id'],'IT-061')
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 7, in check_profile
+    from access_requests.policy import route
+ModuleNotFoundError: No module named 'access_requests.policy'
+
+======================================================================
+ERROR: test_t19_changed_permission (test_policy.PolicyCases.test_t19_changed_permission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 42, in test_t19_changed_permission
+    self.assertEqual(self.check_profile('IT-007.json')[0]['permission'],'write')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 7, in check_profile
+    from access_requests.policy import route
+ModuleNotFoundError: No module named 'access_requests.policy'
+
+======================================================================
+ERROR: test_t20_completeness_precedence (test_policy.PolicyCases.test_t20_completeness_precedence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_policy.py", line 45, in test_t20_completeness_precedence
+    from access_requests.policy import route
+ModuleNotFoundError: No module named 'access_requests.policy'
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.052s
+
+FAILED (errors=11)
