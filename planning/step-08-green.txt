@@ -1,0 +1,45 @@
+test_t34_paraphrase (test_accuracy.AccuracyCases.test_t34_paraphrase) ... ok
+test_t35_full_corpus_independent_expectations (test_accuracy.AccuracyCases.test_t35_full_corpus_independent_expectations) ... ok
+test_t36_counting_and_factual_errors (test_accuracy.AccuracyCases.test_t36_counting_and_factual_errors) ... ok
+test_t32_operator_commands (test_cli.CliCases.test_t32_operator_commands) ... ok
+test_t33_coherent_exports (test_cli.CliCases.test_t33_coherent_exports) ... ok
+test_t02_input_identity_hash_and_boundary (test_contracts.InputContracts.test_t02_input_identity_hash_and_boundary) ... ok
+test_t03_schema_and_exact_quote_validation (test_contracts.InputContracts.test_t03_schema_and_exact_quote_validation) ... ok
+test_t04_extraction_facts (test_extraction.ExtractionCases.test_t04_extraction_facts) ... ok
+test_t05_malformed_output (test_extraction.ExtractionCases.test_t05_malformed_output) ... ok
+test_t06_refusal (test_extraction.ExtractionCases.test_t06_refusal) ... ok
+test_t07_interrupted_response (test_extraction.ExtractionCases.test_t07_interrupted_response) ... ok
+test_t08_provider_failure (test_extraction.ExtractionCases.test_t08_provider_failure) ... ok
+test_t09_provider_request_and_redaction (test_extraction.ExtractionCases.test_t09_provider_request_and_redaction) ... ok
+test_t01_mock_provider_contract (test_mock_provider.MockProviderContract.test_t01_mock_provider_contract)
+Saved replies, failures, retries, and gates work without a key or network. ... ok
+test_t26_overlapping_operators (test_operations.OperationsCases.test_t26_overlapping_operators) ... ok
+test_t27_stop_resume (test_operations.OperationsCases.test_t27_stop_resume) ... ok
+test_t28_ready_while_pending (test_operations.OperationsCases.test_t28_ready_while_pending) ... ok
+test_t29_service_interruption (test_operations.OperationsCases.test_t29_service_interruption) ... ok
+test_t30_atomic_current_publication (test_operations.OperationsCases.test_t30_atomic_current_publication) ... ok
+test_t31_workload (test_operations.OperationsCases.test_t31_workload) ... ok
+test_t10_complete_request (test_policy.PolicyCases.test_t10_complete_request) ... ok
+test_t11_missing_dates (test_policy.PolicyCases.test_t11_missing_dates) ... ok
+test_t12_conflicting_details (test_policy.PolicyCases.test_t12_conflicting_details) ... ok
+test_t13_embedded_instructions (test_policy.PolicyCases.test_t13_embedded_instructions) ... ok
+test_t14_withdrawal (test_policy.PolicyCases.test_t14_withdrawal) ... ok
+test_t15_security_review (test_policy.PolicyCases.test_t15_security_review) ... ok
+test_t16_corrections (test_policy.PolicyCases.test_t16_corrections) ... ok
+test_t17_relative_dates (test_policy.PolicyCases.test_t17_relative_dates) ... ok
+test_t18_identifier_mismatch (test_policy.PolicyCases.test_t18_identifier_mismatch) ... ok
+test_t19_changed_permission (test_policy.PolicyCases.test_t19_changed_permission) ... ok
+test_t20_completeness_precedence (test_policy.PolicyCases.test_t20_completeness_precedence) ... ok
+test_t21_unchanged_rerun (test_repository.RepositoryCases.test_t21_unchanged_rerun) ... ok
+test_t22_changed_source (test_repository.RepositoryCases.test_t22_changed_source) ... ok
+test_t23_failed_retry_after_success (test_repository.RepositoryCases.test_t23_failed_retry_after_success) ... ok
+test_t24_configuration_refresh (test_repository.RepositoryCases.test_t24_configuration_refresh) ... ok
+test_t25_incremental_batches (test_repository.RepositoryCases.test_t25_incremental_batches) ... ok
+test_a_mock_reply_is_read_with_no_key_and_no_network (test_starter.MockResponse.test_a_mock_reply_is_read_with_no_key_and_no_network) ... ok
+test_each_request_export_has_message_text_and_a_hash (test_starter.SuppliedFiles.test_each_request_export_has_message_text_and_a_hash) ... ok
+test_the_schema_names_the_fields_it_requires (test_starter.SuppliedFiles.test_the_schema_names_the_fields_it_requires) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 37.836s
+
+OK
