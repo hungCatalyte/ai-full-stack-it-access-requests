@@ -1,0 +1,102 @@
+test_t02_input_identity_hash_and_boundary (test_contracts.InputContracts.test_t02_input_identity_hash_and_boundary) ... ok
+test_t03_schema_and_exact_quote_validation (test_contracts.InputContracts.test_t03_schema_and_exact_quote_validation) ... ok
+test_t04_extraction_facts (test_extraction.ExtractionCases.test_t04_extraction_facts) ... ok
+test_t05_malformed_output (test_extraction.ExtractionCases.test_t05_malformed_output) ... ok
+test_t06_refusal (test_extraction.ExtractionCases.test_t06_refusal) ... ok
+test_t07_interrupted_response (test_extraction.ExtractionCases.test_t07_interrupted_response) ... ok
+test_t08_provider_failure (test_extraction.ExtractionCases.test_t08_provider_failure) ... ok
+test_t09_provider_request_and_redaction (test_extraction.ExtractionCases.test_t09_provider_request_and_redaction) ... ok
+test_t01_mock_provider_contract (test_mock_provider.MockProviderContract.test_t01_mock_provider_contract)
+Saved replies, failures, retries, and gates work without a key or network. ... ok
+test_t26_overlapping_operators (test_operations.OperationsCases.test_t26_overlapping_operators) ... Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+TypeError: Processor.run() got an unexpected keyword argument 'workers'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+TypeError: Processor.run() got an unexpected keyword argument 'workers'
+FAIL
+test_t27_stop_resume (test_operations.OperationsCases.test_t27_stop_resume) ... /usr/lib/python3.12/subprocess.py:1127: ResourceWarning: subprocess 8 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ERROR
+test_t28_ready_while_pending (test_operations.OperationsCases.test_t28_ready_while_pending) ... FAIL
+test_t29_service_interruption (test_operations.OperationsCases.test_t29_service_interruption) ... ERROR
+test_t30_atomic_current_publication (test_operations.OperationsCases.test_t30_atomic_current_publication) ... ok
+test_t31_workload (test_operations.OperationsCases.test_t31_workload) ... 
+  test_t31_workload (test_operations.OperationsCases.test_t31_workload) (count=400) ... ERROR
+  test_t31_workload (test_operations.OperationsCases.test_t31_workload) (count=2000) ... ERROR
+test_t10_complete_request (test_policy.PolicyCases.test_t10_complete_request) ... ok
+test_t11_missing_dates (test_policy.PolicyCases.test_t11_missing_dates) ... ok
+test_t12_conflicting_details (test_policy.PolicyCases.test_t12_conflicting_details) ... ok
+test_t13_embedded_instructions (test_policy.PolicyCases.test_t13_embedded_instructions) ... ok
+test_t14_withdrawal (test_policy.PolicyCases.test_t14_withdrawal) ... ok
+test_t15_security_review (test_policy.PolicyCases.test_t15_security_review) ... ok
+test_t16_corrections (test_policy.PolicyCases.test_t16_corrections) ... ok
+test_t17_relative_dates (test_policy.PolicyCases.test_t17_relative_dates) ... ok
+test_t18_identifier_mismatch (test_policy.PolicyCases.test_t18_identifier_mismatch) ... ok
+test_t19_changed_permission (test_policy.PolicyCases.test_t19_changed_permission) ... ok
+test_t20_completeness_precedence (test_policy.PolicyCases.test_t20_completeness_precedence) ... ok
+test_t21_unchanged_rerun (test_repository.RepositoryCases.test_t21_unchanged_rerun) ... ok
+test_t22_changed_source (test_repository.RepositoryCases.test_t22_changed_source) ... ok
+test_t23_failed_retry_after_success (test_repository.RepositoryCases.test_t23_failed_retry_after_success) ... ok
+test_t24_configuration_refresh (test_repository.RepositoryCases.test_t24_configuration_refresh) ... ok
+test_t25_incremental_batches (test_repository.RepositoryCases.test_t25_incremental_batches) ... ok
+test_a_mock_reply_is_read_with_no_key_and_no_network (test_starter.MockResponse.test_a_mock_reply_is_read_with_no_key_and_no_network) ... ok
+test_each_request_export_has_message_text_and_a_hash (test_starter.SuppliedFiles.test_each_request_export_has_message_text_and_a_hash) ... ok
+test_the_schema_names_the_fields_it_requires (test_starter.SuppliedFiles.test_the_schema_names_the_fields_it_requires) ... ok
+
+======================================================================
+ERROR: test_t27_stop_resume (test_operations.OperationsCases.test_t27_stop_resume)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_operations.py", line 42, in test_t27_stop_resume
+    self.assertEqual(store.recover(),1)
+                     ^^^^^^^^^^^^^
+AttributeError: 'Store' object has no attribute 'recover'
+
+======================================================================
+ERROR: test_t29_service_interruption (test_operations.OperationsCases.test_t29_service_interruption)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_operations.py", line 68, in test_t29_service_interruption
+    engine.run([self.export(),self.export('IT-002.json')],workers=2)
+TypeError: Processor.run() got an unexpected keyword argument 'workers'
+
+======================================================================
+ERROR: test_t31_workload (test_operations.OperationsCases.test_t31_workload) (count=400)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_operations.py", line 104, in test_t31_workload
+    Processor(store,MockProvider(fixture_dir=fixtures,script=script)).run(paths,workers=4)
+TypeError: Processor.run() got an unexpected keyword argument 'workers'
+
+======================================================================
+ERROR: test_t31_workload (test_operations.OperationsCases.test_t31_workload) (count=2000)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_operations.py", line 104, in test_t31_workload
+    Processor(store,MockProvider(fixture_dir=fixtures,script=script)).run(paths,workers=4)
+TypeError: Processor.run() got an unexpected keyword argument 'workers'
+
+======================================================================
+FAIL: test_t26_overlapping_operators (test_operations.OperationsCases.test_t26_overlapping_operators)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_operations.py", line 28, in test_t26_overlapping_operators
+    for process in processes:self.assertEqual(process.wait(timeout=20),0)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0
+
+======================================================================
+FAIL: test_t28_ready_while_pending (test_operations.OperationsCases.test_t28_ready_while_pending)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_operations.py", line 59, in test_t28_ready_while_pending
+    self.assertTrue(started.wait(5)); self.assertTrue(done.wait(5))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 34 tests in 6.633s
+
+FAILED (failures=2, errors=4)
