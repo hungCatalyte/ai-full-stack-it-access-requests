@@ -1,0 +1,6 @@
+# Locked external dependency set: empty.
+# The runnable application and tests use only CPython's standard library.
+# Supported: CPython >=3.11 on Linux, including sqlite3 and fcntl.
+# Verified interpreter: CPython 3.12.3.
+# JSON validation implements only the supplied schema vocabulary; unsupported
+# schema keywords fail explicitly. No third-party JSON Schema package is used.
