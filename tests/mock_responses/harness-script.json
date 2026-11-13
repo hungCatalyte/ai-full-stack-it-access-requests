@@ -1,0 +1,13 @@
+{
+  "IT-001.json": [
+    {"reply": "harness-success.json"},
+    {"error": "temporary provider outage"},
+    {"reply": "harness-cutoff.json"}
+  ],
+  "IT-002.json": [
+    {"reply": "harness-success.json", "gate": "slow"}
+  ],
+  "IT-003.json": [
+    {"reply": "harness-success.json"}
+  ]
+}

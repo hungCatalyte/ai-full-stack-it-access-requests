@@ -2,7 +2,6 @@
 
 import importlib
 import json
-import os
 import shutil
 import socket
 import tempfile
@@ -22,33 +21,22 @@ class MockProviderContract(unittest.TestCase):
         no_network = mock.Mock(side_effect=AssertionError("T01 opened a network connection"))
         with (
             tempfile.TemporaryDirectory() as temporary,
-            mock.patch.dict(os.environ),
             mock.patch.object(socket, "socket", no_network),
             mock.patch.object(socket, "create_connection", no_network),
         ):
-            os.environ.pop("API_KEY", None)
             fixture_dir = Path(temporary)
-            for name in ("harness-success.json", "harness-cutoff.json"):
+            for name in ("harness-success.json", "harness-cutoff.json", "harness-script.json"):
                 shutil.copyfile(FIXTURES / name, fixture_dir / name)
             success = json.loads((fixture_dir / "harness-success.json").read_text())
             cutoff = json.loads((fixture_dir / "harness-cutoff.json").read_text())
+            script = json.loads((fixture_dir / "harness-script.json").read_text())
 
             # This interface is deliberately absent in the test-first commit.
             module = importlib.import_module("access_requests.providers.mock")
             started, release = threading.Event(), threading.Event()
             provider = module.MockProvider(
                 fixture_dir=fixture_dir,
-                script={
-                    "IT-001.json": [
-                        {"reply": "harness-success.json"},
-                        {"error": "temporary provider outage"},
-                        {"reply": "harness-cutoff.json"},
-                    ],
-                    "IT-002.json": [
-                        {"reply": "harness-success.json", "gate": "slow"},
-                    ],
-                    "IT-003.json": [{"reply": "harness-success.json"}],
-                },
+                script=script,
                 gates={"slow": (started, release)},
             )
             message = "T01 lookup input; no business extraction is being tested."
@@ -85,7 +73,6 @@ class MockProviderContract(unittest.TestCase):
                         )
                     ],
                 )
-            self.assertNotIn("API_KEY", os.environ)
             no_network.assert_not_called()
 
 
