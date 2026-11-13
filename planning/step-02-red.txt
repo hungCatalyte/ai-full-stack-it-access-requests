@@ -1,0 +1,28 @@
+test_t02_input_identity_hash_and_boundary (test_contracts.InputContracts.test_t02_input_identity_hash_and_boundary) ... ERROR
+test_t03_schema_and_exact_quote_validation (test_contracts.InputContracts.test_t03_schema_and_exact_quote_validation) ... ERROR
+test_t01_mock_provider_contract (test_mock_provider.MockProviderContract.test_t01_mock_provider_contract)
+Saved replies, failures, retries, and gates work without a key or network. ... ok
+test_a_mock_reply_is_read_with_no_key_and_no_network (test_starter.MockResponse.test_a_mock_reply_is_read_with_no_key_and_no_network) ... ok
+test_each_request_export_has_message_text_and_a_hash (test_starter.SuppliedFiles.test_each_request_export_has_message_text_and_a_hash) ... ok
+test_the_schema_names_the_fields_it_requires (test_starter.SuppliedFiles.test_the_schema_names_the_fields_it_requires) ... ok
+
+======================================================================
+ERROR: test_t02_input_identity_hash_and_boundary (test_contracts.InputContracts.test_t02_input_identity_hash_and_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_contracts.py", line 8, in test_t02_input_identity_hash_and_boundary
+    from access_requests.contracts import load_document
+ModuleNotFoundError: No module named 'access_requests.contracts'
+
+======================================================================
+ERROR: test_t03_schema_and_exact_quote_validation (test_contracts.InputContracts.test_t03_schema_and_exact_quote_validation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_contracts.py", line 22, in test_t03_schema_and_exact_quote_validation
+    from access_requests.contracts import validate_extraction
+ModuleNotFoundError: No module named 'access_requests.contracts'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.010s
+
+FAILED (errors=2)
