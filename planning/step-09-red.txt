@@ -1,0 +1,24 @@
+test_t37_documented_handover (test_handover.HandoverCases.test_t37_documented_handover) ... FAIL
+test_t38_submission_artifacts (test_handover.HandoverCases.test_t38_submission_artifacts) ... FAIL
+
+======================================================================
+FAIL: test_t37_documented_handover (test_handover.HandoverCases.test_t37_documented_handover)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_handover.py", line 12, in test_t37_documented_handover
+    self.assertIn(term,readme)
+AssertionError: 'Python 3.11' not found in '# AI Full Stack Challenge — IT Access Requests\n\nThe task is in CHALLENGE.md. Replace this file with your own README, as CHALLENGE.md asks.\n\nIn class, start with `docs/00-prerequisites.md` and follow the files in `docs/` in order.\n'
+
+======================================================================
+FAIL: test_t38_submission_artifacts (test_handover.HandoverCases.test_t38_submission_artifacts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_handover.py", line 25, in test_t38_submission_artifacts
+    for name in names:self.assertTrue((directory/name).is_file(),name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : extractions.jsonl
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.007s
+
+FAILED (failures=2)
