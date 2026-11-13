@@ -1,0 +1,18 @@
+test_t02_input_identity_hash_and_boundary (test_contracts.InputContracts.test_t02_input_identity_hash_and_boundary) ... ok
+test_t03_schema_and_exact_quote_validation (test_contracts.InputContracts.test_t03_schema_and_exact_quote_validation) ... ok
+test_t04_extraction_facts (test_extraction.ExtractionCases.test_t04_extraction_facts) ... ok
+test_t05_malformed_output (test_extraction.ExtractionCases.test_t05_malformed_output) ... ok
+test_t06_refusal (test_extraction.ExtractionCases.test_t06_refusal) ... ok
+test_t07_interrupted_response (test_extraction.ExtractionCases.test_t07_interrupted_response) ... ok
+test_t08_provider_failure (test_extraction.ExtractionCases.test_t08_provider_failure) ... ok
+test_t09_provider_request_and_redaction (test_extraction.ExtractionCases.test_t09_provider_request_and_redaction) ... ok
+test_t01_mock_provider_contract (test_mock_provider.MockProviderContract.test_t01_mock_provider_contract)
+Saved replies, failures, retries, and gates work without a key or network. ... ok
+test_a_mock_reply_is_read_with_no_key_and_no_network (test_starter.MockResponse.test_a_mock_reply_is_read_with_no_key_and_no_network) ... ok
+test_each_request_export_has_message_text_and_a_hash (test_starter.SuppliedFiles.test_each_request_export_has_message_text_and_a_hash) ... ok
+test_the_schema_names_the_fields_it_requires (test_starter.SuppliedFiles.test_the_schema_names_the_fields_it_requires) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.041s
+
+OK
