@@ -1,0 +1,13 @@
+{
+  "document_id": "IT-001.json",
+  "extraction": null,
+  "status": "error",
+  "owner": "IT Service Desk",
+  "next_action": "retry-extraction",
+  "error": "scripted provider failure",
+  "response_source": "mock",
+  "settings": {
+    "provider": "mock",
+    "model": "mock"
+  }
+}
