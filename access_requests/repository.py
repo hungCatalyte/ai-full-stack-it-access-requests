@@ -3,6 +3,7 @@ import hashlib
 import json
 import os
 import sqlite3
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
 from pathlib import Path
 from access_requests.contracts import ROOT, load_document
@@ -80,6 +81,21 @@ class Store:
         with self.connection() as db:
             return [dict(row) for row in db.execute("SELECT id AS attempt_id,document_id,source_hash AS source_sha256,state,pid FROM attempts WHERE state!='completed' ORDER BY id")]
 
+    def recover(self):
+        """Requeue claims whose local owning process no longer exists."""
+        recovered=0
+        with self.connection(True) as db:
+            for row in db.execute("SELECT id,pid FROM attempts WHERE state='running'").fetchall():
+                try:
+                    if row['pid'] is None:raise ProcessLookupError()
+                    os.kill(row['pid'],0)
+                except ProcessLookupError:
+                    db.execute("UPDATE attempts SET state='pending',pid=NULL WHERE id=?",(row['id'],))
+                    recovered+=1
+                except PermissionError:
+                    pass  # A process that exists but is not ours must not be stolen.
+        return recovered
+
     def latest_document(self,document_id):
         with self.connection() as db:
             row=db.execute('SELECT a.* FROM documents d JOIN attempts a ON d.desired=a.id WHERE d.document_id=?',(document_id,)).fetchone()
@@ -120,9 +136,15 @@ class Processor:
         self.store.finish(attempt,result)
         return True
 
-    def run(self,paths=(),force=False):
+    def run(self,paths=(),force=False,workers=4):
+        if workers<1 or workers>32:raise ValueError('workers must be between 1 and 32')
+        self.store.recover()
         for path in paths:self.store.admit(load_document(path),self.settings,force=force)
-        while self.process_one():pass
+        def drain():
+            while self.process_one():pass
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futures=[pool.submit(drain) for _ in range(workers)]
+            for future in futures:future.result()
         return self.store.current()
 
     def retry(self,document_id):
